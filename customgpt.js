@@ -14,7 +14,8 @@ export class CustomGPTClient {
     }
     get authenticationHeader () {
         return {
-            'authorization': `Bearer ${this.token}`
+            'authorization': `Bearer ${this.token}`,
+            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0'
         }
     }
 
@@ -30,7 +31,7 @@ export class CustomGPTClient {
         return this.makeRequest(`${this.baseUrl}/conversations`, {
             headers: {...this.authenticationHeader, ...{ 'content-type': 'application/json', 'accept': 'application/json' }},
             method: 'POST',
-            body: JSON.stringify({ name: conversationName })
+            body: JSON.stringify({ name: 'coucou' })
         });
     }
 

@@ -48,4 +48,8 @@ client.on('messageCreate', async (message) => {
 
 });
 
+setInterval(() => {
+  conversations.clear();
+}, 1000 * 60 * 60 * 3);
+
 client.login(process.env.DISCORD_TOKEN);
